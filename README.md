@@ -1,3 +1,4 @@
 spawners
 ========
-README text here.
+`spawners` is a CodeSpells mod! Learn more at https://codespells.org.
+
