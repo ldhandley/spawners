@@ -25,6 +25,8 @@
       #:name "Spawner"
       #:rune (spawner-rune)
       #:description @md{
+      A rune that clearly illustrates the @b{Fundamental Principle of Meta-magic} -- @i{not only wizards do magic; magic does magic.}
+
       An expression beginning with this rune creates a spawner described by the next 2 arguments: (1) an expression describing a thing to spawn and (2) a length of time in ms. If a 2nd argument is not given, a 1000 ms default will be used.    
 
       @(rune-code-example
