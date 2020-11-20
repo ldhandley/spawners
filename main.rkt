@@ -23,6 +23,7 @@
 (define-classic-rune (spawner exp [time 1000])
   #:background "blue"
   #:foreground (spawner-rune-img)
+  (thunk
   (unreal-js @~a{
  (function(){
             
@@ -33,7 +34,7 @@
    }
   }      
   let MySMA_C = uclass(MySMA) 
-  var c = new MySMA_C(GWorld,{X:0, Y:0, Z:0},
+  var c = new MySMA_C(GWorld, {X:@(current-x), Y:@(current-z), Z:@(current-y)},
   {Roll:0, Pitch:0, Yaw:0})
 
   c.StaticMeshComponent.SetMobile()
@@ -57,7 +58,7 @@
 
     return c
   })()
- }))
+ })))
 
 
 (define-classic-rune-lang my-mod-lang #:eval-from main.rkt
@@ -73,13 +74,12 @@
                           (only-in rocks metallic-rock gnarly-rock))
            (sleep 10)
            (unreal-eval-js
-            (at [0 200 50] (parentify metallic-rock
-                                      flames
+            (at [0 200 50] (parentify flames
                                       (spawner
-                                      explosion))))))
+                                      gnarly-rock))))))
   
   (once-upon-a-time
-   #:world (demo-world)
+   #:world (voxel-world)
    #:aether (demo-aether
              #:lang (append-rune-langs #:name main.rkt
 		      (my-mod-lang #:with-paren-runes? #t)
