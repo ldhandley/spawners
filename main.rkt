@@ -1,8 +1,8 @@
 #lang at-exp codespells
 
-;(require-mod rocks)
+(require-mod rocks)
 ;(require-mod hierarchy)
-;(require-mod fire-particles)
+(require-mod fire-particles)
 
 (require spawners/mod-info)
 
@@ -26,7 +26,7 @@
   (thunk
   (unreal-js @~a{
  (function(){
-            
+            console.log("Spawner POWER" + @(current-x));
   const uclass = require('uclass')().bind(this,global)
   class MySMA extends StaticMeshActor {
    ctor() {
@@ -79,13 +79,13 @@
                                       gnarly-rock))))))
   
   (once-upon-a-time
-   #:world (voxel-world)
+   #:world (arena-world)
    #:aether (demo-aether
              #:lang (append-rune-langs #:name main.rkt
 		      (my-mod-lang #:with-paren-runes? #t)
 		      ;(hierarchy:my-mod-lang)
-                      ;(rocks:my-mod-lang)
-                      ;(fire-particles:my-mod-lang)
+                      (rocks:my-mod-lang)
+                      (fire-particles:my-mod-lang)
              ))))
 
 
