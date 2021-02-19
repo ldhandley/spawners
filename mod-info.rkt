@@ -1,4 +1,4 @@
-#lang racket
+#lang codespells
 
 (provide mod-name #;pak-folder main.rkt)
 
@@ -15,5 +15,4 @@
 (define-runtime-path
   main.rkt
   "main.rkt")
-
 
